@@ -8,6 +8,7 @@ async function Sidebar({ children }: {
 }) {
   const currentUser = await getCurrentUser();
 
+  //note: currentUser is not null, but typescript doesn't know that so we use ! to tell it that it can be null
   return (
     <div className="h-full">
       <DesktopSidebar currentUser={currentUser!} />
