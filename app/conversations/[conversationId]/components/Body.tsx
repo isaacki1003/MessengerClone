@@ -34,7 +34,6 @@ const Body: React.FC<BodyProps> = ({ initialMessages = [] }) => {
         if (find(current, { id: message.id })) {
           return current;
         }
-
         return [...current, message]
       });
       
