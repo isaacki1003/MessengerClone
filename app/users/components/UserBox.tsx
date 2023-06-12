@@ -4,7 +4,7 @@ import { useCallback, useState } from "react";
 import { useRouter } from "next/navigation";
 import {  User } from "@prisma/client";
 
-// import Avatar from "@/app/components/Avatar";
+import Avatar from "@/app/components/Avatar";
 import LoadingModal from "@/app/components/modals/LoadingModal";
 
 interface UserBoxProps {
@@ -46,14 +46,16 @@ const UserBox: React.FC<UserBoxProps> = ({
           rounded-lg
           transition
           cursor-pointer
+          dark:bg-gray-800
+          
         "
       >
-        {/* <Avatar user={data} /> */}
+        <Avatar user={data} />
         <div className="min-w-0 flex-1">
           <div className="focus:outline-none">
             <span className="absolute inset-0" aria-hidden="true" />
             <div className="flex justify-between items-center mb-1">
-              <p className="text-sm font-medium text-gray-900">
+              <p className="text-sm font-medium text-gray-900 dark:text-white">
                 {data.name}
               </p>
             </div>

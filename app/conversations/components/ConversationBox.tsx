@@ -79,6 +79,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
         rounded-lg
         transition
         cursor-pointer
+        dark:bg-gray-800
         `,
         selected ? 'bg-neutral-100' : 'bg-white'
       )}
@@ -92,7 +93,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
         <div className="focus:outline-none">
           <span className="absolute inset-0" aria-hidden="true" />
           <div className="flex justify-between items-center mb-1">
-            <p className="text-md font-medium text-gray-900">
+            <p className="text-md font-medium text-gray-900 dark:text-white">
               {data.name || otherUser?.name}
             </p>
             {lastMessage?.createdAt && (
@@ -101,6 +102,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
                   text-xs 
                   text-gray-400 
                   font-light
+                  dark:text-white
                 "
               >
                 {format(new Date(lastMessage.createdAt), 'p')}
@@ -112,7 +114,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
               truncate 
               text-sm
               `,
-              hasSeen ? 'text-gray-500' : 'text-black font-medium'
+              hasSeen ? 'text-gray-500 dark:text-gray-100' : 'text-black font-medium dark:text-white'
             )}>
               {lastMessageText}
             </p>

@@ -53,6 +53,8 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
         justify-between 
         items-center 
         shadow-sm
+        dark:bg-gray-800
+        dark:text-white
       "
     >
       <div className="flex gap-3 items-center">
@@ -76,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
         )}
         <div className="flex flex-col">
           <div>{conversation.name || otherUser?.name}</div>
-          <div className="text-sm font-light text-neutral-500">
+          <div className="text-sm font-light text-neutral-500 dark:text-white">
             {statusText}
           </div>
         </div>

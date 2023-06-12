@@ -95,10 +95,11 @@ const ConversationList: React.FC<ConversationListProps> = ({
         overflow-y-auto 
         border-r 
         border-gray-200 
-      `, isOpen ? 'hidden' : 'block w-full left-0')}>
-        <div className="px-5">
+        dark:bg-gray-800
+      `, isOpen ? 'hidden' : 'block w-full left-0 dark:border-gray-800')}>
+        <div className="px-5 dark:bg-gray-800">
           <div className="flex justify-between mb-4 pt-4">
-            <div className="text-2xl font-bold text-neutral-800">
+            <div className="text-2xl font-bold text-neutral-800 dark:text-white">
               Messages
             </div>
             <div 
