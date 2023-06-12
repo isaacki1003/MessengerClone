@@ -104,6 +104,46 @@ const AuthForm = () => {
       .finally(() => setIsLoading(false));
   }
 
+  const handleDemoUser1 = () => {
+    setIsLoading(true);
+
+    signIn('credentials', {
+      email: 'test@test.com',
+      password: 'password',
+      redirect: false
+    })
+      .then((callback) => {
+        if (callback?.error) {
+          toast.error('Invalid credentials!');
+        }
+
+        if (callback?.ok) {
+          router.push('/users');
+        }
+      })
+      .finally(() => setIsLoading(false));
+  };
+
+  const handleDemoUser2 = () => {
+    setIsLoading(true);
+
+    signIn('credentials', {
+      email: 'test1@test.com',
+      password: 'password',
+      redirect: false
+    })
+      .then((callback) => {
+        if (callback?.error) {
+          toast.error('Invalid credentials!');
+        }
+
+        if (callback?.ok) {
+          router.push('/users');
+        }
+      })
+      .finally(() => setIsLoading(false));
+  };
+
   return (
     <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
       <div
@@ -206,6 +246,30 @@ const AuthForm = () => {
             {variant === 'LOGIN' ? 'Create an account' : 'Login'}
           </div>
         </div>
+        <div className="
+            flex
+            gap-2
+            justify-center
+            text-xs
+            mt-6
+            px-2
+          ">
+            <button type="button" onClick={handleDemoUser1} disabled={isLoading}>
+              {isLoading ? 'Loading...' : 'Sign in as Demo User 1'}
+            </button>
+          </div>
+          <div className="
+            flex
+            gap-2
+            justify-center
+            text-xs
+            mt-6
+            px-2
+          ">
+            <button type="button" onClick={handleDemoUser2} disabled={isLoading}>
+              {isLoading ? 'Loading...' : 'Sign in as Demo User 2'}
+            </button>
+          </div>
       </div>
     </div>
   );
